@@ -1,0 +1,11 @@
+app:
+  environment:
+    DB_CONNECTION: mysql
+    DB_DATABASE: exampledb
+    DB_HOST: mysql.example.com
+    DB_PASSWORD: examplepassword
+    DB_PORT: "3306"
+    DB_USERNAME: exampleuser
+  repository:
+    image: civilfleet/ohf-freeshop
+    tag: main
