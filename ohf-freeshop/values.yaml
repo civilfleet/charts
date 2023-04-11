@@ -6,6 +6,7 @@ app:
     DB_PASSWORD: examplepassword
     DB_PORT: "3306"
     DB_USERNAME: exampleuser
+    extraEnv: []
   repository:
     image: civilfleet/ohf-freeshop
     tag: main
