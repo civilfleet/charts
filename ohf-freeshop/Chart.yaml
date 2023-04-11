@@ -1,8 +1,6 @@
-# Create on 2023-04-11T17:34:09+02:00
-# Katenary command line: katenary convert -c docker-compose-prod.yml
 apiVersion: v2
-appVersion: 0.0.2
+appVersion: 0.0.3
 description: A helm chart for ohf-freeshop
 name: ohf-freeshop
 type: application
-version: 0.2.0
+version: 0.3.0
