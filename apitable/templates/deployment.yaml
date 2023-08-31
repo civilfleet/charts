@@ -45,6 +45,13 @@ spec:
           #  httpGet:
           #    path: /
           #    port: http
+          env:
+            { { - range .Values.extraEnv } }
+            { { - if and (.name) (.value) } }
+            - name: { { .name | quote } }
+              value: { { .value | quote } }
+            { { - end } }
+            { { - end } }
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
