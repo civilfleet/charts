@@ -53,6 +53,13 @@ spec:
           volumeMounts:
             - name: apitable-persistent-storage
               mountPath: /app/
+      initContainers:
+        - name: init-copyapp
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          command: [ 'sh', '-c', "cp -a /app/. /appdest/; sleep 2; done" ]
+          volumeMounts:
+            - name: apitable-persistent-storage
+              mountPath: /appdest/
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
