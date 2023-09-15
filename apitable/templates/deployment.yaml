@@ -52,14 +52,14 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: apitable-persistent-storage
-              mountPath: /app/
+              mountPath: /apitable/
       initContainers:
         - name: init-copyapp
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          command: [ 'sh', '-c', "cp -a /app/. /appdest/; sleep 2;" ]
+          command: [ 'sh', '-c', "cp -a /apitable/. /apitabledest/; sleep 2;" ]
           volumeMounts:
             - name: apitable-persistent-storage
-              mountPath: /appdest/
+              mountPath: /apitabledest/
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
