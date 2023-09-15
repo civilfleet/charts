@@ -3,7 +3,17 @@ entries:
   apitable:
   - apiVersion: v2
     appVersion: v1.0.0-beta.2
-    created: "2023-09-15T20:04:09.3273384+08:00"
+    created: "2023-09-15T21:13:58.1547995+08:00"
+    description: A Helm chart for apitable
+    digest: 1d348f4a06ba6f22bfb0accb1d346418fa9b91897a70c8b7447d85b1e0afe9ee
+    name: apitable
+    type: application
+    urls:
+    - https://civilfleet.github.io/charts/apitable-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: v1.0.0-beta.2
+    created: "2023-09-15T21:13:58.1542435+08:00"
     description: A Helm chart for apitable
     digest: 234ffcb9aacaa3cf3ed623e2a7f2d2b634e10d88fe33e07ef1c629ede6c1aef8
     name: apitable
@@ -13,7 +23,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: v1.0.0-beta_1659
-    created: "2023-09-15T20:04:09.3267904+08:00"
+    created: "2023-09-15T21:13:58.1536685+08:00"
     description: A Helm chart for apitable
     digest: 434bae10c5ad110906ffe1b72fc9fe6d0bebffc8e4ae0511e4e23cb302b484d0
     name: apitable
@@ -23,7 +33,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: v0.99.1-beta.1_1644
-    created: "2023-09-15T20:04:09.3262326+08:00"
+    created: "2023-09-15T21:13:58.1531137+08:00"
     description: A Helm chart for apitable
     digest: c718a3df88d8e979c4003e4c40561cef0feda247fe04d30976c700d100a9c572
     name: apitable
@@ -33,7 +43,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: v0.99.1-beta.1_1644
-    created: "2023-09-15T20:04:09.3257123+08:00"
+    created: "2023-09-15T21:13:58.1519853+08:00"
     description: A Helm chart for apitable
     digest: bb715b8fcb6f8eb7526888aae775553dcbc645978f16fd97031cbcfe25e6e682
     name: apitable
@@ -43,7 +53,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: v0.99.1-beta.1_1644
-    created: "2023-09-15T20:04:09.32519+08:00"
+    created: "2023-09-15T21:13:58.1514381+08:00"
     description: A Helm chart for apitable
     digest: b9d0bcebbaf0a6b1cd1a12fb95b5420f89a1dd25192bd40fcdb9d22a4591d6b8
     name: apitable
@@ -53,7 +63,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: v0.99.1-beta.1_1644
-    created: "2023-09-15T20:04:09.3245451+08:00"
+    created: "2023-09-15T21:13:58.150357+08:00"
     description: A Helm chart for apitable
     digest: 4db0143fd2d1af6432ecc88d0bf64481eabf7f542c990212170b9a0cddc04f27
     name: apitable
@@ -64,7 +74,7 @@ entries:
   bitwardenrs:
   - apiVersion: v2
     appVersion: 1.23.0
-    created: "2023-09-15T20:04:09.3367483+08:00"
+    created: "2023-09-15T21:13:58.163866+08:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: 33b1de11be88264d576bf9671ff0dd0fac549119f3eebc08610add073ed3ded0
     home: https://github.com/dani-garcia/vaultwarden - bitwarden - bitwarden_rs -
@@ -82,7 +92,7 @@ entries:
     version: 0.5.1
   - apiVersion: v2
     appVersion: 1.23.0
-    created: "2023-09-15T20:04:09.3356941+08:00"
+    created: "2023-09-15T21:13:58.1627446+08:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: 285dad7bfa566a686745a2db5a3a12fb84c32db4e19296301eb41482cc0a6625
     home: https://github.com/dani-garcia/vaultwarden - bitwarden - bitwarden_rs -
@@ -100,7 +110,7 @@ entries:
     version: 0.5.0
   - apiVersion: v2
     appVersion: 1.22.2
-    created: "2023-09-15T20:04:09.3346506+08:00"
+    created: "2023-09-15T21:13:58.1616157+08:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: 71d66d9fff547aca704f935e55f3b8530849c1a21d2b1b5de7f76050c9c0a2fe
     home: https://github.com/dani-garcia/vaultwarden - bitwarden - bitwarden_rs -
@@ -118,7 +128,7 @@ entries:
     version: 0.4.1
   - apiVersion: v2
     appVersion: 1.22.2
-    created: "2023-09-15T20:04:09.3341136+08:00"
+    created: "2023-09-15T21:13:58.1604504+08:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: 4afa8713cc778ad5b984285f60aaa4552423f023b2a9099a2b508dedf1adcda5
     home: https://github.com/dani-garcia/vaultwarden - bitwarden - bitwarden_rs -
@@ -136,7 +146,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 1.21.0
-    created: "2023-09-15T20:04:09.3330525+08:00"
+    created: "2023-09-15T21:13:58.1593196+08:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: fb75653a8d017b657dd9e957dbbef889455cb6b0852b7752d4fe837b56756630
     home: https://github.com/dani-garcia/vaultwarden - bitwarden - bitwarden_rs -
@@ -154,7 +164,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.20.0
-    created: "2023-09-15T20:04:09.3319567+08:00"
+    created: "2023-09-15T21:13:58.1581827+08:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: a0654531b10fc16879eee20ea650c159e920a6a62cf630672ca547fdd90e69f6
     home: https://github.com/dani-garcia/bitwarden_rs
@@ -175,7 +185,7 @@ entries:
     version: 0.2.2
   - apiVersion: v2
     appVersion: 1.19.0
-    created: "2023-09-15T20:04:09.3311812+08:00"
+    created: "2023-09-15T21:13:58.1570531+08:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: 4b8e7c91227f63de76db7adb37a1332bb5c6234fceae017728c2af6065861dd5
     home: https://github.com/dani-garcia/bitwarden_rs
@@ -196,7 +206,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.19.0
-    created: "2023-09-15T20:04:09.3299737+08:00"
+    created: "2023-09-15T21:13:58.155932+08:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: f59a1b10479a90564d08b49307ddfa9f129b32d7c8ed64b6efeab5da98e52463
     home: https://github.com/dani-garcia/bitwarden_rs
@@ -218,7 +228,7 @@ entries:
   leantime:
   - apiVersion: v2
     appVersion: 2.1.7
-    created: "2023-09-15T20:04:09.3432888+08:00"
+    created: "2023-09-15T21:13:58.1701334+08:00"
     description: Lean project management system for innovators
     digest: 203ac9c608c235b8e954011ba7acabdd30c03c25e0740347a865b56ef7c345d6
     home: https://leantime.io/
@@ -242,7 +252,7 @@ entries:
     version: 0.2.2
   - apiVersion: v2
     appVersion: 2.1.7
-    created: "2023-09-15T20:04:09.3405786+08:00"
+    created: "2023-09-15T21:13:58.1690044+08:00"
     description: Lean project management system for innovators
     digest: 0b2ccbfe90418cd0f30a23bcede7ba1f112bda95448702ea08810399b8e64478
     home: https://leantime.io/
@@ -266,7 +276,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 2.1.7
-    created: "2023-09-15T20:04:09.3394796+08:00"
+    created: "2023-09-15T21:13:58.1679116+08:00"
     description: Lean project management system for innovators
     digest: 8fadeddb238b9eff3c782eaba45e45ea1ca06c881479c46f5be0394905bd6e7b
     home: https://leantime.io/
@@ -290,7 +300,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 2.1.4
-    created: "2023-09-15T20:04:09.3383922+08:00"
+    created: "2023-09-15T21:13:58.1662306+08:00"
     description: Lean project management system for innovators
     digest: a9dc509bdf96841d6ee74180d27f551110e4d3610a04c79152e7ba32a8021c5b
     home: https://leantime.io/
@@ -314,7 +324,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 2.1.4
-    created: "2023-09-15T20:04:09.3378485+08:00"
+    created: "2023-09-15T21:13:58.1645579+08:00"
     description: Lean project management system for innovators
     digest: c8084219f6d45b8ab733bc26c4fd9dd072a1b582b23b0fd2b8c5f586a306b4d6
     home: https://leantime.io/
@@ -339,7 +349,7 @@ entries:
   ohf-freeshop:
   - apiVersion: v2
     appVersion: 0.0.3
-    created: "2023-09-15T20:04:09.3444134+08:00"
+    created: "2023-09-15T21:13:58.1718231+08:00"
     description: A helm chart for ohf-freeshop
     digest: 890968a4ed0f170abd4bb525a5718d134d31fa4ccac6b0fc21d1b62b33d9f841
     name: ohf-freeshop
@@ -349,7 +359,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 0.0.2
-    created: "2023-09-15T20:04:09.3444134+08:00"
+    created: "2023-09-15T21:13:58.1712579+08:00"
     description: A helm chart for ohf-freeshop
     digest: 98cf34c65199656f5f4a35c0098aed0634efbef7fb484e12605236aba619ebfc
     name: ohf-freeshop
@@ -359,7 +369,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2023-09-15T20:04:09.3438539+08:00"
+    created: "2023-09-15T21:13:58.1707083+08:00"
     description: A helm chart for ohf-freeshop
     digest: 9f85b81dc1d8ca0c066a691fa87d279ebcde4e5cece87d970ebcf2605a4a462a
     name: ohf-freeshop
@@ -370,7 +380,7 @@ entries:
   vaultwarden:
   - apiVersion: v2
     appVersion: 1.23.0
-    created: "2023-09-15T20:04:09.3493494+08:00"
+    created: "2023-09-15T21:13:58.1778079+08:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: f6c043d26c78b899fb96f80d33104aabaa82becbc12938d13455c525a10b4af1
     home: https://github.com/dani-garcia/vaultwarden - bitwarden - bitwarden_rs -
@@ -388,7 +398,7 @@ entries:
     version: 0.5.1
   - apiVersion: v2
     appVersion: 1.23.0
-    created: "2023-09-15T20:04:09.348247+08:00"
+    created: "2023-09-15T21:13:58.1761716+08:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: 9404413273e0752709281e7ec4ce9b22b7b21093556f02f6ad297598a66149f1
     home: https://github.com/dani-garcia/vaultwarden - bitwarden - bitwarden_rs -
@@ -406,7 +416,7 @@ entries:
     version: 0.5.0
   - apiVersion: v2
     appVersion: 1.22.2
-    created: "2023-09-15T20:04:09.3471057+08:00"
+    created: "2023-09-15T21:13:58.1751096+08:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: 01008997530693a837fb7466769b6a8e0fbe194fe5840c42d0e7d039dc6d3abd
     home: https://github.com/dani-garcia/vaultwarden - bitwarden - bitwarden_rs -
@@ -424,7 +434,7 @@ entries:
     version: 0.4.1
   - apiVersion: v2
     appVersion: 1.22.2
-    created: "2023-09-15T20:04:09.3465504+08:00"
+    created: "2023-09-15T21:13:58.1740412+08:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: 542398384c706583e9ee778e9ab47f95b0bef289671de346415558765d09a8d5
     home: https://github.com/dani-garcia/vaultwarden - bitwarden - bitwarden_rs -
@@ -442,7 +452,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 1.21.0
-    created: "2023-09-15T20:04:09.345479+08:00"
+    created: "2023-09-15T21:13:58.1729314+08:00"
     description: Unofficial Bitwarden compatible server written in Rust
     digest: 9b4281624ae9775ee440d5678555b513f84b9c636854c46ed41ffd0cf1d9fd87
     home: https://github.com/dani-garcia/vaultwarden - bitwarden - bitwarden_rs -
@@ -458,4 +468,4 @@ entries:
     urls:
     - https://civilfleet.github.io/charts/vaultwarden-0.3.0.tgz
     version: 0.3.0
-generated: "2023-09-15T20:04:09.3239914+08:00"
+generated: "2023-09-15T21:13:58.1481246+08:00"
