@@ -56,7 +56,7 @@ spec:
       initContainers:
         - name: init-copyapp
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          command: [ 'sh', '-c', "cp -a /app/. /appdest/; sleep 2; done" ]
+          command: [ 'sh', '-c', "cp -a /app/. /appdest/; sleep 2;" ]
           volumeMounts:
             - name: apitable-persistent-storage
               mountPath: /appdest/
