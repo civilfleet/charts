@@ -1,0 +1,38 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: '{{ .Release.Name }}-cronjob'
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: scheduler
+            image: '{{ .Values.app.repository.image }}{{ if ne .Values.app.repository.tag "" }}:{{ .Values.app.repository.tag }}{{ end }}'
+            command:
+              - php
+            args:
+              - artisan
+              - schedule:run
+            env:
+              - name: DB_PORT
+                value: '{{ tpl .Values.app.environment.DB_PORT . }}'
+              - name: DB_DATABASE
+                value: '{{ tpl .Values.app.environment.DB_DATABASE . }}'
+              - name: DB_USERNAME
+                value: '{{ tpl .Values.app.environment.DB_USERNAME . }}'
+              - name: DB_PASSWORD
+                value: '{{ tpl .Values.app.environment.DB_PASSWORD . }}'
+              - name: DB_CONNECTION
+                value: '{{ tpl .Values.app.environment.DB_CONNECTION . }}'
+              - name: DB_HOST
+                value: '{{ tpl .Values.app.environment.DB_HOST . }}'
+              { { - range .Values.app.extraEnv } }
+              { { - if and (.name) (.value) } }
+              - name: { { .name | quote } }
+                value: { { .value | quote } }
+              { { - end } }
+              { { - end } }
+          restartPolicy: OnFailure
