@@ -29,10 +29,10 @@ spec:
                 value: '{{ tpl .Values.app.environment.DB_CONNECTION . }}'
               - name: DB_HOST
                 value: '{{ tpl .Values.app.environment.DB_HOST . }}'
-              { { - range .Values.app.extraEnv } }
-              { { - if and (.name) (.value) } }
-              - name: { { .name | quote } }
-                value: { { .value | quote } }
-              { { - end } }
-              { { - end } }
+              {{- range .Values.app.extraEnv }}
+              {{- if and (.name) (.value) }}
+              - name: {{ .name | quote }}
+                value: {{ .value | quote }}
+              {{- end }}
+              {{- end }}
           restartPolicy: OnFailure
