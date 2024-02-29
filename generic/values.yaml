@@ -1,0 +1,6 @@
+app:
+  environment:
+    extraEnv: []
+  repository:
+    image: civilfleet/generic
+    tag: main

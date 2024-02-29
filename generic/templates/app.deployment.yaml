@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: '{{ .Release.Name }}-app'
+  labels:
+    katenary.io/component: app
+    katenary.io/project: '{{ .Chart.Name }}'
+    katenary.io/release: '{{ .Release.Name }}'
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      katenary.io/component: app
+      katenary.io/release: '{{ .Release.Name }}'
+  template:
+    metadata:
+      labels:
+        katenary.io/component: app
+        katenary.io/release: '{{ .Release.Name }}'
+    spec:
+      containers:
+        - name: app
+          image: '{{ .Values.app.repository.image }}{{ if ne .Values.app.repository.tag "" }}:{{ .Values.app.repository.tag }}{{ end }}'
+          ports:
+            - name: app
+              containerPort: 80
+          env:
+            {{- range .Values.app.extraEnv }}
+            {{- if and (.name) (.value) }}
+            - name: {{ .name | quote }}
+              value: {{ .value | quote }}
+            {{- end }}
+            {{- end }}
