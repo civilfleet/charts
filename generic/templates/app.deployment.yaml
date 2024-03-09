@@ -18,12 +18,20 @@ spec:
         katenary.io/component: app
         katenary.io/release: '{{ .Release.Name }}'
     spec:
+      volumes:
+        - name: app-persistent-storage
+          persistentVolumeClaim:
+            claimName: '{{ .Release.Name }}-pvc'
+
       containers:
         - name: app
           image: '{{ .Values.app.repository.image }}{{ if ne .Values.app.repository.tag "" }}:{{ .Values.app.repository.tag }}{{ end }}'
           ports:
             - name: app
               containerPort: 80
+          volumeMounts:
+            - name: app-persistent-storage
+              mountPath: /var/www/html/
           env:
             {{- range .Values.app.extraEnv }}
             {{- if and (.name) (.value) }}

@@ -4,3 +4,8 @@ app:
   repository:
     image: civilfleet/generic
     tag: main
+persistence:
+  ## Persistent Volume storage class
+  # storageClass: "-"
+  ## Use existing Persistent Volume Claim
+  # existingClaim:
