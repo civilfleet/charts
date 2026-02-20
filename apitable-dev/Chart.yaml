@@ -1,0 +1,7 @@
+apiVersion: v2
+appVersion: 0.0.1
+description: A helm chart for apitable
+icon: https://kubernetes.io/images/favicon.png
+name: apitable
+type: application
+version: 0.3.1

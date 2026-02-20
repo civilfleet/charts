@@ -1,0 +1,7 @@
+apiVersion: v2
+appVersion: 0.0.1
+description: A helm chart for klb-bap-manager
+icon: https://kubernetes.io/images/favicon.png
+name: klb-bap-manager
+type: application
+version: 0.0.1

@@ -1,0 +1,110 @@
+{{ include "nocodb.configmap" . }}
+{{ include "nocodb.secrets" . }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-nocodb
+  labels:
+    app.kubernetes.io/name: nocodb
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: nocodb
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: nocodb
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      securityContext:
+        runAsUser: {{ .Values.podSecurityContext.runAsUser }}
+        runAsGroup: {{ .Values.podSecurityContext.runAsGroup }}
+      containers:
+        - name: nocodb
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          securityContext:
+            runAsNonRoot: {{ .Values.securityContext.runAsNonRoot }}
+            readOnlyRootFilesystem: {{ .Values.securityContext.readOnlyRootFilesystem }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.main.ports.main.port }}
+          env:
+            - name: PORT
+              value: "{{ .Values.service.main.ports.main.port }}"
+            - name: NC_PUBLIC_URL
+              value: {{ .Values.env.NC_PUBLIC_URL | quote }}
+            - name: NC_DISABLE_TELE
+              value: {{ .Values.env.NC_DISABLE_TELE | quote }}
+            - name: DISABLE_SPLASH_SCREEN
+              value: {{ .Values.env.DISABLE_SPLASH_SCREEN | quote }}
+            - name: NC_JWT_EXPIRES_IN
+              value: {{ .Values.env.NC_JWT_EXPIRES_IN | quote }}
+            - name: NC_INVITE_ONLY_SIGNUP
+              value: {{ .Values.env.NC_INVITE_ONLY_SIGNUP | quote }}
+            - name: NC_DISABLE_CACHE
+              value: {{ .Values.env.NC_DISABLE_CACHE | quote }}
+            - name: NC_DISABLE_ERR_REPORT
+              value: {{ .Values.env.NC_DISABLE_ERR_REPORT | quote }}
+            - name: NC_REQUEST_BODY_SIZE
+              value: {{ .Values.env.NC_REQUEST_BODY_SIZE | quote }}
+            - name: NC_EXPORT_MAX_TIMEOUT
+              value: {{ .Values.env.NC_EXPORT_MAX_TIMEOUT | quote }}
+            - name: NC_SENTRY_DSN
+              value: {{ .Values.env.NC_SENTRY_DSN | quote }}
+            {{- with .Values.env.NC_REDIS_URL.secretKeyRef }}
+            - name: NC_REDIS_URL
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .name | quote }}
+                  key: {{ .key | quote }}
+            {{- end }}
+            {{- with .Values.env.NC_AUTH_JWT_SECRET.secretKeyRef }}
+            - name: NC_AUTH_JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .name | quote }}
+                  key: {{ .key | quote }}
+            {{- end }}
+          envFrom:
+            - configMapRef:
+                name: nocodb-configmap
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.probes.liveness.path | quote }}
+              port: http
+          readinessProbe:
+            httpGet:
+              path: {{ .Values.probes.readiness.path | quote }}
+              port: http
+          startupProbe:
+            httpGet:
+              path: {{ .Values.probes.startup.path | quote }}
+              port: http
+          volumeMounts:
+            - name: data
+              mountPath: {{ .Values.persistence.data.mountPath | quote }}
+      volumes:
+        - name: data
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-nocodb
+  labels:
+    app.kubernetes.io/name: nocodb
+    app.kubernetes.io/instance: {{ .Release.Name }}
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: nocodb
+    app.kubernetes.io/instance: {{ .Release.Name }}
+  ports:
+    - name: http
+      port: {{ .Values.service.main.ports.main.port }}
+      targetPort: http
