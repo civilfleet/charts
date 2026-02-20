@@ -1,0 +1,15 @@
+dependencies:
+- name: docs
+  repository: https://download.onlyoffice.com/charts/stable
+  version: 5.1.0
+- name: postgresql
+  repository: https://charts.bitnami.com/bitnami
+  version: 16.7.27
+- name: rabbitmq
+  repository: https://charts.bitnami.com/bitnami
+  version: 16.0.14
+- name: redis
+  repository: https://charts.bitnami.com/bitnami
+  version: 22.0.7
+digest: sha256:3691b345dfdd8c5358b222d7435d04da9a99dff7e468abda991570ec9ee4405c
+generated: "2026-02-20T13:40:33.311994297+01:00"

@@ -1,0 +1,14 @@
+# Common VCS dirs
+.git/
+.github/
+.svn/
+.hg/
+
+# Editor files
+.idea/
+.vscode/
+*.swp
+*.bak
+
+# Chart artifacts
+# Keep dependency archives for reproducible installs.

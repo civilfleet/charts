@@ -1,0 +1,81 @@
+global:
+  storageClass: ""
+
+docs:
+  enabled: true
+
+  # External URL for editors and callback links.
+  # Example: https://docs.example.com
+  # If empty, ONLYOFFICE uses internal defaults.
+  externalHost: ""
+
+  ingress:
+    enabled: false
+    classname: ""
+    host: ""
+    path: /
+    tls: []
+
+  persistence:
+    enabled: true
+    size: 10Gi
+    storageClass: ""
+
+  # Match official Kubernetes-Docs wiring for services and secrets.
+  connections:
+    dbType: postgres
+    dbHost: postgresql
+    dbPort: "5432"
+    dbName: postgres
+    dbUser: postgres
+    dbPass: ""
+    dbExistingSecret: postgresql
+    dbSecretKeyName: postgres-password
+
+    redisHost: redis-master
+    redisPort: "6379"
+    redisPass: ""
+    redisExistingSecret: redis
+    redisSecretKeyName: redis-password
+
+    amqpType: rabbitmq
+    amqpHost: rabbitmq
+    amqpPort: "5672"
+    amqpUser: user
+    amqpPass: ""
+    amqpExistingSecret: rabbitmq
+    amqpSecretKeyName: rabbitmq-password
+
+postgresql:
+  enabled: true
+  fullnameOverride: postgresql
+  auth:
+    username: postgres
+    database: postgres
+  primary:
+    persistence:
+      enabled: true
+      size: 8Gi
+      storageClass: ""
+
+rabbitmq:
+  enabled: true
+  fullnameOverride: rabbitmq
+  auth:
+    username: user
+  persistence:
+    enabled: true
+    size: 8Gi
+    storageClass: ""
+
+redis:
+  enabled: true
+  fullnameOverride: redis
+  architecture: standalone
+  auth:
+    enabled: true
+  master:
+    persistence:
+      enabled: true
+      size: 8Gi
+      storageClass: ""

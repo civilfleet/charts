@@ -1,0 +1,25 @@
+apiVersion: v2
+name: onlyoffice
+description: Umbrella chart for ONLYOFFICE Docs with PostgreSQL, RabbitMQ, and Redis
+type: application
+version: 0.1.0
+appVersion: "9.0.3"
+icon: https://static-www.onlyoffice.com/v4/images/favicon.ico
+
+dependencies:
+  - name: docs
+    version: 5.1.0
+    repository: https://download.onlyoffice.com/charts/stable
+    condition: docs.enabled
+  - name: postgresql
+    version: 16.7.27
+    repository: https://charts.bitnami.com/bitnami
+    condition: postgresql.enabled
+  - name: rabbitmq
+    version: 16.0.14
+    repository: https://charts.bitnami.com/bitnami
+    condition: rabbitmq.enabled
+  - name: redis
+    version: 22.0.7
+    repository: https://charts.bitnami.com/bitnami
+    condition: redis.enabled
